@@ -28,3 +28,6 @@ html, body{
 #sessao{
     margin-left: 1.3vw;
 }
+.drag{
+    cursor: pointer;
+}
