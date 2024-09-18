@@ -15,12 +15,16 @@ html, body{
 }
 #titulo{
     height: auto;
-    width: 30vw;
+    width: 50vw;
 }
 .info{
     position: absolute;
     top: 100px; 
     left: 100px; 
+    margin-left: 200vw;
     border: 2px solid #000;
     z-index: 1000;
+}
+#sessao{
+    margin-left: 1.3vw;
 }

@@ -10,10 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="mx-auto" style="text-align: center;"><h4 style="font-family: 'fonteshow';">Esse website foi desenvolvido <strong>somente</strong> para visualização do meu namorado, Lian. Se você não é ele, <a style="color: #3388ff;" onclick="video()">clique aqui</a></h4></div>
+    <div class="mx-auto" style="text-align: center;"><h4 style="font-family: 'fonteshow';">Esse website foi desenvolvido <strong>somente</strong> para visualização do meu namorado, Lian. Se você não é ele, <a style="color: #3388ff; text-decoration: underline;" onclick="video()">clique aqui</a></h4></div>
     <script>
         let offset = 0;
         function video(){
+            document.title = "vaza caralho"
+            document.body.style.backgroundColor = "#000"
+            document.body.style.backgroundImage = ""
             document.body.innerHTML = '<div  class="mx-auto" style="width: 50vw;"><video id="video"style="width: 100%;" autoplay><source src="./media/bonzi buddy vai tomar no cu piranha..mp4" type="video/mp4"></video></div>';
             var video = document.getElementById('video');
             video.removeAttribute('muted');
@@ -33,14 +36,15 @@
                         <button aria-label="Close" id="botao-titulo" onclick=fechaJanela()></button>
                     </div>
                 </div>
-                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: center; font-family: 'fonteshow'">
-                    <h3>Esse site foi criado para você, meu amor! Ele tem o intuito de descrever algumas informações, exibir imagens, textos e muitas coisas que eu queria te mostrar. Espero que goste!</h3>
+                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: justify; font-family: 'fonteshow'">
+                    <h3>esse site foi criado para você, meu amor! ele tem o intuito de descrever algumas informações, exibir imagens, textos e muitas coisas que eu queria te mostrar. Espero que goste!</h3>
                 </div>
             `
             document.body.appendChild(info)
-        }
-        function fechaJanela(){
-            var info = document.getElementById("info")
+            const closeButton = info.querySelector('#botao-titulo')
+            closeButton.addEventListener('click', ()=>fechaJanela(info))
+        }   
+        function fechaJanela(info){
             if (info){
                 info.remove()
             }
@@ -49,15 +53,57 @@
     <nav>
         <div class="mx-auto window" id="titulo" style="margin-top: 1vw;">
             <div class="title-bar">
-                <div class="title-bar-text" style="font-size: 0.8vw;">oiiii lindinho</div>
+                <div id="imagemzinha" style="width: 1vw;">
+                    <img src="./media/pasta.png" alt="" style="width: 1vw;">
+                </div>
+                <div class="title-bar-text" style="font-size: 0.8vw; margin-left: -39.6vw;">oiiii lindinho</div>
                 <div class="title-bar-controls">
                     <button aria-label="Help" id="botao-titulo" onclick=janela1()></button>
                     <button aria-label="Close" id="botao-titulo"></button>
                 </div>
             </div>
-            <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: center;">
-                <h3>seja bem-vindo!</h3>
+            <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: center; display: grid;">
+                <h3><strong>seja bem-vindo!</strong></h3>
+                <div id="sessao-container" style="display: flex; flex-wrap: wrap; width: 50vw;">
+                    <div id="sessao" style="width: 10vw;;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/cute.png" alt=""></div>
+                        <p style="margin-top: -2vw;">informacoes sobre vc</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/snupi.png" alt=""></div>
+                        <p style="margin-top: -2vw;">cartinha</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/janela.png" alt=""></div>
+                        <p style="margin-top: -2vw;">galeria</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/tec.png" alt=""></div>
+                        <p style="margin-top: -2vw;">informacoes técnicas</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/nb.png" alt=""></div>
+                        <p style="margin-top: -2vw;">nao tem nada aqui mas ta escrito nb na imagem</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/desenho.png" alt=""></div>
+                        <p style="margin-top: -2vw;">desenhos feitos no paint</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/datas.png" alt=""></div>
+                        <p style="margin-top: -2vw;">datas para lembrar</p>
+                    </div>
+                    <div id="sessao" style="width: 10vw;">
+                        <div id="imagem_sessao" style="width: 10vw;"><img style="width: 10vw;" src="./media/computer.png" alt=""></div>
+                        <p style="margin-top: -2vw;">pedido formal</p>
+                    </div>
+                </div>
             </div>
+            <div class="status-bar" style="font-size: 0.8vw;">
+                <p class="status-bar-field">©baps 2024</p>
+                <p class="status-bar-field">eu te amo!!!</p>
+                <p class="status-bar-field">pw: nosso aniver de namoro (dia e mês, sem barra, tipo 0101)</p>
+              </div>
         </div>
     </nav>
 </body>
