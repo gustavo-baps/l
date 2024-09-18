@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: fonteshow;
+    src: url('./fonts/micross.ttf') format('woff2');
+}
+body{
+    background-image: url('./media/win85.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+}
+html, body{
+    height: 100%;
+}
+#titulo{
+    height: auto;
+    width: 30vw;
+}
