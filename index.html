@@ -10,12 +10,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="mx-auto" style="text-align: center;"><h4 style="font-family: 'fonteshow';">Esse website foi desenvolvido <strong>somente</strong> para visualização do meu namorado, Lian. Se você não é ele, <a style="color: #3388ff;" onclick="video()"">clique aqui</a></h4></div>
+    <div class="mx-auto" style="text-align: center;"><h4 style="font-family: 'fonteshow';">Esse website foi desenvolvido <strong>somente</strong> para visualização do meu namorado, Lian. Se você não é ele, <a style="color: #3388ff;" onclick="video()">clique aqui</a></h4></div>
     <script>
+        let offset = 0;
         function video(){
-        document.body.innerHTML = '<div  class="mx-auto" style="width: 50vw;"><video id="video"style="width: 100%;" autoplay><source src="./media/bonzi buddy vai tomar no cu piranha..mp4" type="video/mp4"></video></div>';
-        var video = document.getElementById('video');
-        video.removeAttribute('muted');
+            document.body.innerHTML = '<div  class="mx-auto" style="width: 50vw;"><video id="video"style="width: 100%;" autoplay><source src="./media/bonzi buddy vai tomar no cu piranha..mp4" type="video/mp4"></video></div>';
+            var video = document.getElementById('video');
+            video.removeAttribute('muted');
+        }
+        function janela1(){
+            offset+=20
+            var info = document.createElement('div')
+            info.className = 'mx-auto window info'
+            info.style.width = "20vw"
+            info.id = "info"
+            info.style.top = `${100 + offset}px`
+            info.style.left = `${100 + offset}px` 
+            info.innerHTML=`
+                <div class="title-bar">
+                <div class="title-bar-text" style="font-size: 0.8vw;"><3</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="botao-titulo" onclick=fechaJanela()></button>
+                    </div>
+                </div>
+                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: center; font-family: 'fonteshow'">
+                    <h3>Esse site foi criado para você, meu amor! Ele tem o intuito de descrever algumas informações, exibir imagens, textos e muitas coisas que eu queria te mostrar. Espero que goste!</h3>
+                </div>
+            `
+            document.body.appendChild(info)
+        }
+        function fechaJanela(){
+            var info = document.getElementById("info")
+            if (info){
+                info.remove()
+            }
         }
     </script>
     <nav>
@@ -23,12 +51,12 @@
             <div class="title-bar">
                 <div class="title-bar-text" style="font-size: 0.8vw;">oiiii lindinho</div>
                 <div class="title-bar-controls">
-                    <button aria-label="Help" id="botao-titulo"></button>
+                    <button aria-label="Help" id="botao-titulo" onclick=janela1()></button>
                     <button aria-label="Close" id="botao-titulo"></button>
                 </div>
             </div>
-            <div style="background-color: white; font-size: 1.2vw; padding: 1vw; font-family: 'fonteshow';">
-                <h2>seja bem-vindo!</h2>
+            <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: center;">
+                <h3>seja bem-vindo!</h3>
             </div>
         </div>
     </nav>
