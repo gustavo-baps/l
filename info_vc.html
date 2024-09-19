@@ -13,7 +13,18 @@
     <script>
         $(function(){
             $(".window").draggable({
-                handle: ".title-bar"
+                handle: ".title-bar",
+                drag: function(event, ui){
+                    var altura = $('body').height();
+                    var alturaJanela = $(this).outerHeight();
+
+                    if (ui.position < 0){
+                        ui.position.top = 0;
+                    }
+                    if(ui.position.top + alturaJanela > altura){
+                        ui.position.top = altura - alturaJanela
+                    }
+                }
             });
         });
 
@@ -22,10 +33,51 @@
             $(this).addClass("por-cima-de-tudo-e-todos");
         });
     </script>
+    <script>
+        let offset = 0
+        function fechaJanelinha(aiai){
+            if (aiai){
+                aiai.remove()
+            }
+        }
+        function janelinha(){
+            offset+=20
+            var aiai = document.createElement('div')
+            aiai.className = 'mx-auto window info'
+            aiai.style.width = "8vw"
+            aiai.id = "aiai"
+            aiai.style.top = `${100 + offset}px`
+            aiai.style.left = `${100 + offset}px` 
+            aiai.innerHTML=`
+                <div class="title-bar">
+                <div class="title-bar-text" style="font-size: 0.8vw; width: 5vw;"><3</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="botao-titulo" onclick=fechaJanela()></button>
+                    </div>
+                </div>
+                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: justify; font-family: 'fonteshow'">
+                    <img src="./media/untitled.jpg" style="width: 5vw;">
+                </div>
+            `
+            document.body.appendChild(aiai)
+            const closeButton = aiai.querySelector('#botao-titulo')
+            closeButton.addEventListener('click', ()=>fechaJanelinha(aiai))
+        }   
+    </script>
 </head>
-<body>
-    <div class="mx-auto" style="text-align: center;"><img src="./media/info.png" alt="" style="width: 30;"></div>
-    <div class="mx-auto" style="text-align: center; font-family: 'fonteshow'; margin-bottom: 5vw;"><h2 style="color: black;">(vou te elogiar pra caralho ok)</h2></div>
+<body id="pipipi">
+    <div class="mx-auto" style="text-align: center;"><img src="./media/info.png" alt="" style="width: 30vw;"></div>
+        <div class="mx-auto window" style="text-align: center; font-family: 'fonteshow'; margin-bottom: 5vw; width: 20vw;">
+            <div class="title-bar">
+                <div class="title-bar-text">spoiler: </div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <h4 style="color: black; padding: 0.5vw;">(vou te elogiar pra caralho ok)</h4>
+        </div>
         <div class="mx-auto" style="width: 60vw; margin-top: 2vw; display: flex; gap: 2vw; flex-wrap: wrap; align-items: flex-start;">
             <div class="window" style="width: 17vw; font-family: 'fonteshow'; font-size: 0.7vw;">
                 <div class="title-bar drag">
@@ -75,10 +127,71 @@
                 </div>
                 <div style="background-color: white; padding: 1vw; font-family: 'fonteshow'; font-size: 0.7vw;">
                     <h6>você é LINDO</h6>
-                    <p>sua beleza é inconcebível, seus olhos castanhos perfuram minha alma</p>
+                    <p>sua beleza é inconcebível, seus olhos castanhos perfuram minha alma, seu rostinho faz meu coração arder. olhar pra você é como encontrar a felicidade pura e genuína. você por inteiro é uma obra de arte, perfeito, te adoro, você é meu deus</p>
+                    <p style="font-size: 0.6vw;">(eu queria fazer algo mais fofo mas nao posso deixar de mencionar q amo seu corpo também pqp gzbazbhabzgzhzbhbs)</p>
+                    <p>eu olhando pra vc:</p>
+                    <img src="./media/rover.png" alt="" style="width: 5vw;">
+                </div>
+            </div>
+            <div class="window" style="width: 17vw; font-family: 'fonteshow'; margin-top: -7vw;">
+                <div class="title-bar drag">
+                    <div class="title-bar-text">numero 4</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Minimize"></button>
+                      <button aria-label="Maximize"></button>
+                      <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div style="background-color: white; padding: 1vw;">
+                    <h6>sem você eu fico igual esse bicho (triste fudido miseravel):</h6>
+                    <img src="./media/clippy.gif" alt="" style="width: 10vw;">
+                </div>
+            </div>
+            <div class="window" style="width: 17vw; font-family: 'fonteshow'; margin-top: -13vw;">
+                <div class="title-bar drag">
+                    <div class="title-bar-text">numero 5</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Minimize"></button>
+                      <button aria-label="Maximize"></button>
+                      <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div style="background-color: white; padding: 1vw;">
+                    <h6>sua personalidade é incrível</h6>
+                    <p>eu amo seu jeitinho, a maneira como você pensa, como seu cérebro funciona, tudo isso me fascina. 
+                        seus trejeitos, suas qualidades, as piadas que você faz, são todas características que fizeram que eu me apaixonasse por
+                    você</p>
+                    <ul>
+                        <li>você é engraçado</li>
+                        <li>inteligente</li>
+                        <li>canta bem pra caralho</li>
+                        <li>toca violão e teclado</li>
+                        <li>é carinhoso</li>
+                        <li>sensível</li>
+                        <li>me dá muito amor</li>
+                        <li>é gentil</li>
+                    </ul>
+                    <h4>eu te amo tanto 😭😭😭😭😭😭😭</h4>
+                </div>
+            </div>
+            <div class="window" style="width: 17vw; font-family: 'fonteshow'; margin-top: -1vw;">
+                <div class="title-bar drag">
+                    <div class="title-bar-text">numero 6</div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Minimize"></button>
+                      <button aria-label="Maximize"></button>
+                      <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div style="background-color: white; padding: 1vw;">
+                    <h6>se você fosse um bicho você seria esse gatinho:</h6>
+                    <img src="./media/gatinho.webp" alt="" style="width: 14.6vw;">
                 </div>
             </div>
         </div>
-
+        <footer class="window" style="margin-top: 8vw; height: 2vw; z-index: 9999999999; font-size: 0.75vw;">
+            <a href="index.html"><button id="btn_bonitinho"><img src="./media/windo.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>inicio</strong></button></a>
+            <button id="btn_bonitinho" onclick=janelinha()><img src="./media/corasao.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>oiiiiiii</strong></button>
+        </footer>
 </body>
 </html>
