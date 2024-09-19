@@ -29,7 +29,7 @@ html, body{
     margin-left: 1.3vw;
 }
 .drag{
-    cursor: pointer;
+    cursor: -webkit-grab;
 }
 .window{
     height: auto;
