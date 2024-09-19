@@ -16,11 +16,16 @@
                 handle: ".title-bar"
             });
         });
+
+        $(document).on('mousedown', '.window.ui-draggable', function() {
+            $('.window.ui-draggable').removeClass("por-cima-de-tudo-e-todos");
+            $(this).addClass("por-cima-de-tudo-e-todos");
+        });
     </script>
 </head>
 <body>
-    <div class="mx-auto" style="text-align: center; font-family: 'fonteshow';"><h2 style="color: black;">informacoes sobre vc</h2></div>
-        <div class="mx-auto" style="width: 60vw; margin-top: 2vw; display: flex; gap: 2vw; flex-wrap: wrap;">
+    <div class="mx-auto" style="text-align: center; font-family: 'fonteshow';"><h2 style="color: black;">informações sobre você</h2></div>
+        <div class="mx-auto" style="width: 60vw; margin-top: 2vw; display: flex; gap: 2vw; flex-wrap: wrap; align-items: flex-start;">
             <div class="window" style="width: 17vw; font-family: 'fonteshow';">
                 <div class="title-bar drag">
                     <div class="title-bar-text">numero 1</div>
@@ -35,7 +40,12 @@
                     <ul>
                         <li>o diabo</li>
                         <li>jesus (de acordo com alguns ele é perfeito)</li>
-                        <li></li>
+                        <li>essa música: <a href="https://youtu.be/fJ9rUzIMcZQ?si=Wune1SlEMEKWs9em">clicaaaa</a></li>
+                        <li>o comunismo utópico</li>
+                        <li>cirice</li>
+                        <li>a extrema-esquerda</li>
+                        <li>um dia de sol no outono</li>
+                        <li>qualquer coisa no mundo, você é minha definição de perfeição</li>
                     </ul>
                 </div>
             </div>

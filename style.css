@@ -31,3 +31,9 @@ html, body{
 .drag{
     cursor: pointer;
 }
+.window{
+    height: auto;
+}
+.por-cima-de-tudo-e-todos{
+    z-index: 9999;
+}
