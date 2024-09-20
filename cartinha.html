@@ -34,13 +34,13 @@
                     </div>
                 </div>
                 <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: justify; font-family: 'fonteshow'">
-                    <img src="./media/untitled.jpg" style="width: 5vw;">
+                    <img src="${src}" style="width: 100%;">
                 </div>
             `
             document.body.appendChild(aiai)
             const closeButton = aiai.querySelector('#botao-titulo')
             closeButton.addEventListener('click', ()=>fechaJanelinha(aiai))
-        }   
+        }
     </script>
     <div class="mx-auto window" id="titulo" style="margin-top: 1vw;">
         <div class="title-bar">
@@ -54,19 +54,26 @@
                 <button aria-label="Close" id="botao-titulo"></button>
             </div>
         </div>
-        <div style="background-color: white; font-size: 1.2vw; padding: 2vw; text-align: center; display: grid; font-family: 'fonteshow';">
-            <p>Eu gosto muito de escrever para você apesar de quase nunca encontrar as palavras que eu procuro para expressar o que eu sinto.
-                Hoje é dia 20 de setembro de 2024, fazem exatamente 20 dias que você me pediu em namoro. Desde então eu sou cada dia mais grato
+        <div class="mx-auto" style="background-color: white; text-align: center;"><img src="./media/esnupi.png" alt="" style="width: 5vw; margin-top: 2vw;"></div>
+        <div style="background-color: white; font-size: 1.2vw; padding: 1vw 2vw 2vw 2vw; text-align: justify; display: grid; font-family: 'fonteshow';">
+            <p>Eu gosto muito de escrever para você apesar de quase nunca encontrar as palavras que eu procuro para expressar o que eu sinto.</p>
+            <p>Hoje é dia 20 de setembro de 2024, fazem exatamente 20 dias que você me pediu em namoro. Desde então eu sou cada dia mais grato
                 por ter você na minha vida todos os dias, já parecem tantos meses, anos, mas nos conhecemos há pouco mais de um mês.
                 Queria te dizer, mesmo que eu já diga em toda oportunidade possível, que eu te amo muito, de verdade. Você se tornou uma das partes
                 mais importantes da minha vida, e eu já não consigo imaginar meus dias sem sua presença. Quero ser mandado, adorado, acariciado,
                 machucado e amado por você. 
             </p>
+            <p>Chame de destino, chame de Karma, mas é uma sorte muito grande estarmos juntos. Você é perfeito, e eu diria que eu fui feito para
+                você, meu amor, eu te adoro. Quero ficar com você para sempre, me sinto muito seguro e tenho certeza que você é o amor da minha vida.
+            </p>
+            <p>"Você é tudo que eu amei na vida" - Gal Costa</p>
         </div>
     </div>
-    <footer class="window" style="margin-top: 8vw; height: 2vw; z-index: 9999999999; font-size: 0.75vw; margin-top: 10.35vw;">
-        <a href="index.html"><button id="btn_bonitinho"><img src="./media/windo.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>inicio</strong></button></a>
-        <button id="btn_bonitinho" onclick=janelinha()><img src="./media/corasao.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>oiiiiiii</strong></button>
-    </footer>
+    <div class="footer-container">
+        <footer class="window" style="margin-top: 8vw; height: 2vw; z-index: 9999999999; font-size: 0.75vw; margin-top: 10.35vw;">
+            <a href="index.html"><button id="btn_bonitinho"><img src="./media/windo.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>inicio</strong></button></a>
+            <button id="btn_bonitinho" onclick=janelinha()><img src="./media/corasao.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>oiiiiiii</strong></button>
+        </footer>
+    </div>
 </body>
 </html>

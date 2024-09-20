@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𖹭 for my boyfriend 𖹭</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body style="height: 40vw;">
+    <div class="mx-auto" style="text-align: center;"><img src="./media/imagens-bonitinhas.png" alt="" style="width: 30vw;"></div>
+    <script>
+        $(document).on('mousedown', '.mx-auto.window.info.ui-draggable', function() {
+            $('.window.ui-draggable').removeClass("por-cima-de-tudo-e-todos");
+            $(this).addClass("por-cima-de-tudo-e-todos");
+        });
+    </script>
+    <script>
+        let offset = 0;
+        function fechaJanelinha(aiai){
+            if (aiai){
+                aiai.remove()
+            }
+        }
+        function janelinha(){
+            offset+=20
+            var aiai = document.createElement('div')
+            aiai.className = 'mx-auto window info'
+            aiai.style.width = "8vw"
+            aiai.id = "aiai"
+            aiai.style.top = `${100 + offset}px`
+            aiai.style.left = `${100 + offset}px` 
+            aiai.innerHTML=`
+                <div class="title-bar">
+                <div class="title-bar-text" style="font-size: 0.8vw; width: 5vw;"><3</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="botao-titulo" onclick=fechaJanela()></button>
+                    </div>
+                </div>
+                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: justify; font-family: 'fonteshow'">
+                    <img src="./media/untitled.jpg" style="width: 5vw;">
+                </div>
+            `
+            document.body.appendChild(aiai)
+            const closeButton = aiai.querySelector('#botao-titulo')
+            closeButton.addEventListener('click', ()=>fechaJanelinha(aiai))
+        }
+        
+        function janelaFoto(src, mouseX, mouseY){
+            var foto = document.createElement('div')
+            foto.className = 'mx-auto window info'
+            foto.style.width = "23vw"
+            foto.id = "info"
+            foto.style.top = `${mouseY}px`
+            foto.style.left = `${mouseX}px` 
+            foto.innerHTML=`
+                <div class="title-bar drag">
+                <div class="title-bar-text" style="font-size: 0.8vw;"><3</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="botao-titulo" onclick=fechaJanelaFoto()></button>
+                    </div>
+                </div>
+                <div style="background-color: white; font-size: 1.2vw; padding: 1vw; text-align: justify; font-family: 'fonteshow'">
+                    <img src="${src}" style="width: 20vw;">
+                </div>
+            `
+            document.body.appendChild(foto)
+            const closeButton = foto.querySelector('#botao-titulo')
+            closeButton.addEventListener('click', ()=>fechaJanelaFoto(foto))
+            $(foto).draggable({
+                handle: ".title-bar",
+                drag: function(event, ui){
+                    var alturaJanela = $(this).outerHeight()
+                    var alturaTela = $(document).height()
+                    var larguraJanela = $(this).outerWidth()
+                    var larguraTela = $(window).width()
+
+                    ui.position.top = Math.max(ui.position.top, 0)
+                    ui.position.left = Math.max(ui.position.left, 0)
+
+                    ui.position.top = Math.min(ui.position.top, alturaTela - alturaJanela)
+                    ui.position.left = Math.min(ui.position.left, larguraTela - larguraJanela)
+                }
+            })
+        }   
+        function fechaJanelaFoto(foto){
+            if (foto){
+                foto.remove()
+            }
+        }  
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.foto').forEach(foto => {
+                foto.addEventListener('click', () => {
+                    const src = foto.querySelector('img').src
+                    const mouseX = event.pageX
+                    const mouseY = event.pageY
+                    janelaFoto(src, mouseX, mouseY);
+                })
+            })
+        })
+    </script>
+    <nav>
+        <div class="mx-auto window" id="titulo" style="margin-top: 1vw;  margin-bottom: 3vw;">
+            <div class="title-bar">
+                <div id="imagemzinha" style="width: 1vw;">
+                    <img src="./media/janela2.png" alt="" style="width: 1vw;">
+                </div>
+                <div class="title-bar-text" style="font-size: 0.8vw; margin-left: -37vw;">muitas coisinhas</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div style="background-color: white; font-size: 1.2vw; padding: 3vw; text-align: center; display: flex;">
+                <div id="sessao-container" style="display: flex; flex-wrap: wrap; width: 50vw; gap: 2vw;">
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/nois se fosse desenho.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>a gente se fosse desenho</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/moes.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>nossas mões</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/puppycat.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>vc</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/nois2.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>a gente >:)</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/nois cozinhando.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>quando vc fez aomosso (minha ft fav)</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/nois.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>se nós fossemos gatinhos</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/buque.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>o buque q vc me deu 😭</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/wallaceandscott.jpg" alt="" style="width: 100%; height: 13vw;">
+                        <p>wallace (vc) e scott (eu)</p>
+                    </div>
+                    <div class="foto" style="width: 13vw;">
+                        <img class="image" src="./media/universe.gif" alt="" style="width: 100%; height: 13vw;">
+                        <p>0.2% do quanto eu te amo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="footer-container">
+        <footer class="window" style="margin-top: 8vw; height: 2vw; z-index: 9999999999; font-size: 0.75vw; margin-top: 10.35vw;">
+            <a href="index.html"><button id="btn_bonitinho"><img src="./media/windo.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>inicio</strong></button></a>
+            <button id="btn_bonitinho" onclick=janelinha()><img src="./media/corasao.png" alt="" style="width: 0.9vw; float: left; margin-left: 0.5vw;"><strong>oiiiiiii</strong></button>
+        </footer>
+    </div>
+</body>
+</html>
